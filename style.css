@@ -202,3 +202,52 @@ img { max-width: 100%; display: block; }
     .slide-content h1 { font-size: 2rem; }
     .detail-wrapper, .about-container, .contact-wrapper, .cart-wrapper-layout { grid-template-columns: 1fr; gap: 30px; }
 }
+/* --- Mobile Cart Page Layout Fix --- */
+@media (max-width: 600px) {
+    /* Cart card ko flex-direction badal kar padding sahi karenge */
+    .cart-item {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 15px 45px 15px 10px !important; /* Right side par space chodi hai delete button k liye */
+        gap: 12px;
+    }
+
+    /* Image ka size mobile k mutabik thoda adjust */
+    .cart-item-img {
+        width: 70px !important;
+        height: 70px !important;
+        object-fit: cover;
+    }
+
+    /* Product info (Title, Price) ka layout */
+    .cart-item-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .cart-item-title {
+        font-size: 14px !important;
+        line-height: 1.3;
+        margin-bottom: 2px;
+    }
+
+    /* Quantity selector container */
+    .quantity-controls {
+        margin-top: 5px;
+    }
+
+    /* Delete (Bin) icon ko card ke andar right side par fixed karne k liye */
+    .delete-btn {
+        position: absolute !important;
+        right: 12px !important;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 !important;
+        padding: 5px !important;
+        z-index: 5;
+    }
+}
